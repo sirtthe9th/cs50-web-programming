@@ -1,1 +1,35 @@
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Advanced Search</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <form action="https://www.google.com/search">
+      <div class="search-container">
+        <a href="./index.html"><img src="./images/googlelogo_color_272x92dp.png" alt="Google Logo"></a>
+        <input type="text" name="q" id="search-bar">
+        <br>
+        <div id="advanced-search-link">
+          <a href="./advanced.html">Advanced Search</a>
+        </div>
+        <br>
+        <input type="checkbox" name="as_epq" id="exact-phrase-search">
+        <label for="exact-phrase-search">Exact Phrase</label>
+        <br>
+        <input type="checkbox" name="as_oq" id="any-words-search">
+        <label for="any-words-search">Any Words</label>
+        <br>
+        <input type="checkbox" name="as_eq" id="exclude-words-search">
+        <label for="exclude-words-search">None of these words</label>
+        <br>
+        <div id="button-container">
+          <a href="./index.html"><button id="search-button">Google Search</button></a>
+          <a href="./index.html"><button id="advanced-search-button">I'm Feeling Lucky</button></a>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
