@@ -1,0 +1,128 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo {
+  margin-top: 50px;
+}
+
+.search {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search input[type="text"] {
+  padding: 10px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  width: 500px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons input[type="submit"] {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  color: #444;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.buttons a {
+  background-color: #4285f4;
+  border: 1px solid #4285f4;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.links {
+  margin-top: 30px;
+}
+
+.links a {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+/* Styling for the Google Advanced Search page */
+
+.form {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.form input[type="text"] {
+  padding: 5px;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  width: 500px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.advanced-search-button {
+  background-color: #4285f4;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Styling for the Google Image Search page */
+
+.image-search-form {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-search-form input[type="text"] {
+  padding: 10px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  width: 500px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.image-search-form input[type="submit"] {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  color: #444;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
