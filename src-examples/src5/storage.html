@@ -12,10 +12,20 @@
                 document.querySelector('#counter').innerHTML = localStorage.getItem('counter');
 
                 // Count every time button is clicked
-                document.querySelector('button').onclick = () => {
+                document.querySelector('#add').onclick = () => {
                     // Increment current counter
                     let counter = localStorage.getItem('counter');
                     counter++;
+
+                    // Update counter
+                    document.querySelector('#counter').innerHTML = counter;
+                    localStorage.setItem('counter', counter);
+                }
+
+                document.querySelector('#subtract').onclick = () => {
+                    // Increment current counter
+                    let counter = localStorage.getItem('counter');
+                    counter--;
 
                     // Update counter
                     document.querySelector('#counter').innerHTML = counter;
@@ -28,6 +38,7 @@
     </head>
     <body>
         <h1 id="counter"></h1>
-        <button>Click Here!</button>
+        <button id="add">Add!</button>
+        <button id="subtract">Subtract!</button>
     </body>
 </html>
