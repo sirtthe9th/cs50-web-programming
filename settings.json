@@ -1,0 +1,188 @@
+{
+  "workbench.colorTheme": "Tomorrow Night Blue",
+  "workbench.startupEditor": "none",
+  "workbench.editor.untitled.hint": "hidden",
+  "security.workspace.trust.untrustedFiles": "open",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "git.autofetch": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDragAndDrop": false,
+  "git.enableSmartCommit": true,
+  "explorer.confirmDelete": false,
+  "editor.accessibilitySupport": "on",
+  "editor.inlineSuggest.enabled": true,
+  "editor.formatOnPaste": true,
+  "workbench.sideBar.location": "right",
+  "git.confirmSync": false,
+  "editor.formatOnSave": true,
+  "prettier.configPath": "C:\\Users\\treid\\source\\repos\\(A)AutomationInitiative\\Met.ServiceOrders.AutomatedTests\\.prettierrc",
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "'Fira Code iScript', Consolas, 'Courier New', monospace",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "Comment",
+        "scope": ["comment", "punctuation.definition.comment"],
+        "settings": {
+          "fontStyle": "italic"
+          //"foreground": "#4A4A4A"
+        }
+      },
+
+      {
+        "name": "Keyword, Storage",
+        "scope": ["Keyword", "Storage"],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+
+      {
+        "name": "Keyword Control",
+        "scope": ["keyword.control"],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+
+      {
+        "scope": "entity.other.attribute-name",
+        "settings": {
+          "fontStyle": "italic"
+          //"foreground": "#78dce8"
+        }
+      },
+
+      {
+        "name": "entity.name.method.js",
+        "scope": ["entity.name.method.js"],
+        "settings": {
+          "fontStyle": "italic"
+          //"foreground": "#82AAFF"
+        }
+      },
+
+      {
+        "name": "Language methods",
+        "scope": ["variable.language"],
+        "settings": {
+          "fontStyle": "italic"
+          //"foreground": "#FF5370"
+        }
+      },
+
+      {
+        "name": "HTML Attributes",
+        "scope": [
+          "text.html.basic entity.other.attribute-name.html",
+          "text.html.basic entity.other.attribute-name"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+          //"foreground": "#FFCB6B"
+        }
+      },
+
+      {
+        "name": "Decorators",
+        "scope": [
+          "tag.decorator.js entity.name.tag.js",
+          "tag.decorator.js punctuation.definition.tag.js"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+          //"foreground": "#82AAFF"
+        }
+      },
+
+      {
+        "name": "ES7 Bind Operator",
+        "scope": [
+          "source.js constant.other.object.key.js string.unquoted.label.js"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+          //"foreground": "#FF5370"
+        }
+      },
+
+      {
+        "name": "Markup - Italic",
+        "scope": ["markup.italic"],
+        "settings": {
+          "fontStyle": "italic"
+          //"foreground": "#f07178"
+        }
+      },
+
+      {
+        "name": "Markup - Bold-Italic",
+        "scope": [
+          "markup.bold markup.italic",
+          "markup.italic markup.bold",
+          "markup.quote markup.bold",
+          "markup.bold markup.italic string",
+          "markup.italic markup.bold string",
+          "markup.quote markup.bold string"
+        ],
+        "settings": {
+          "fontStyle": "bold"
+          //"foreground": "#f07178"
+        }
+      },
+
+      {
+        "name": "Markup - Quote",
+        "scope": ["markup.quote"],
+        "settings": {
+          "fontStyle": "italic"
+          //"foreground": ""
+        }
+      },
+      {
+        "scope": "variable.other",
+        "settings": {
+          "foreground": "#82fbff"
+        }
+      },
+      {
+        "scope": "entity.name.function",
+        "settings": {
+          "foreground": "#dfd9a8"
+        }
+      },
+      {
+        "scope": "support.function",
+        "settings": {
+          "fontStyle": "italic",
+          "foreground": "#dfd9a8"
+        }
+      },
+      {
+        "scope": "string",
+        "settings": {
+          "foreground": "#CE9178"
+        }
+      }
+    ]
+  },
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "editor.fontWeight": "normal"
+}
