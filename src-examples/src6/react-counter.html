@@ -10,19 +10,17 @@
         <div id="app"></div>
 
         <script type="text/babel">
-            function Hello(props) {
-                return(
-                    <h1>Hello, {props.name}!</h1>
-                )
-            }
-
             function App() {
                 const [count, setCount] = React.useState(0);
+
+                function updateCount() {
+                    setCount(count + 1);
+                }
+
                 return (
                     <div>
-                        <Hello name="Harry" />
-                        <Hello name="Happy" />
-                        <Hello name="Healthy" />
+                        <h1>{count}</h1>
+                        <button onClick={updateCount}>Count</button>
                     </div>
                 );
             }
