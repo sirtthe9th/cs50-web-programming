@@ -1,0 +1,18 @@
+{% extends "lacrosse_quiz/layout.html" %}{% load static %}
+
+{% block script%}
+<script src="{% static 'lacrosse_quiz/beginQuiz.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+<h1>Welcome to the box lacrosse quiz!</h1>
+<a class="question-link" href="{% url 'question' %}">Go to questions</a>
+<button id="begin-quiz" href="{% url 'question' %}">Start Quiz</button>
+<ul>
+    {% for article in article %}
+    <a href="{% url 'article' article %}">
+        <li>{{ article }}</li>
+    </a>
+    {% endfor %}
+</ul>
+{% endblock %}

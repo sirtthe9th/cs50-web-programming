@@ -1,0 +1,15 @@
+{% extends "lacrosse_quiz/layout.html" %} {% load static %} {% block body %}
+
+<h1>{{ question.question_text }}</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {% for choice in choices %}
+    <div>
+        <input type="radio" id="choice{{ forloop.counter }}" name="answer" value="{{ forloop.counter0 }}" required>
+        <label for="choice{{ forloop.counter }}">{{ choice }}</label>
+    </div>
+    {% endfor %}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

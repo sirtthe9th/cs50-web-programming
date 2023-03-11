@@ -1,0 +1,27 @@
+{% extends "lacrosse_quiz/layout.html" %} {% load static %} {% block body %}
+
+<h1>Quiz Results</h1>
+
+{% for result, question in results %}
+<h3>{{ question.question_text }}</h3>
+<ul>
+    <li>Your answer: {{ question.choices|get_item:user_answers.get(question=question).answer }}</li>
+    <li>Correct answer: {{ question.choices|get_item:question.correct_answer }}</li>
+    <li>Result: {{ result }}</li>
+</ul>
+{% endfor %}
+
+{% for result, question in results %}
+<div>
+    <h2>{{ question.question_text }}</h2>
+    {% if result == 'Unanswered' %}
+    <p>You did not answer this question.</p>
+    {% elif result == 'Correct' %}
+    <p>You answered correctly.</p>
+    {% else %}
+    <p>You answered incorrectly.</p>
+    <p>The correct answer was "{{ question.get_correct_answer_display }}".</p>
+    {% endif %}
+</div>
+{% endfor %}
+{% endblock %}
