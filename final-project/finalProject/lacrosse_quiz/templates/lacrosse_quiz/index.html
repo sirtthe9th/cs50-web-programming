@@ -10,9 +10,9 @@
 <button id="begin-quiz" href="{% url 'question' %}">Start Quiz</button>
 <ul>
     {% for article in articles %}
-    <a href="{% url 'article' article %}">
-        <li>{{ articles }}</li>
-    </a>
+        <a href="{% url 'article' article %}">
+            <li>{{ article }}</li>
+        </a>
     {% endfor %}
 </ul>
 {% endblock %}
