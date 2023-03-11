@@ -9,9 +9,9 @@
 <a class="question-link" href="{% url 'question' %}">Go to questions</a>
 <button id="begin-quiz" href="{% url 'question' %}">Start Quiz</button>
 <ul>
-    {% for article in article %}
+    {% for article in articles %}
     <a href="{% url 'article' article %}">
-        <li>{{ article }}</li>
+        <li>{{ articles }}</li>
     </a>
     {% endfor %}
 </ul>

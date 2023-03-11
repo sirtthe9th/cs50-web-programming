@@ -49,7 +49,7 @@ def index(request):
     # hat is in the lacrosse_quiz app path.
     return render(request, "lacrosse_quiz/index.html",
                   {
-                      "article": util.list_articles()
+                      "articles": util.list_articles()
                   })
 
 
