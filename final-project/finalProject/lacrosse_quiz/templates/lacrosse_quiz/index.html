@@ -6,7 +6,7 @@
 
 {% block body %}
 <h1>Welcome to the box lacrosse quiz!</h1>
-<a class="question-link" href="{% url 'question' %}">Go to questions</a>
+<p id="quiz-description">Study the articles and take the quiz when you feel you are ready!</p>
 <button id="begin-quiz" href="{% url 'question' %}">Start Quiz</button>
 <ul>
     {% for article in articles %}
