@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'finalProject',
     'lacrosse_quiz',
+    'laxQuiz',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
