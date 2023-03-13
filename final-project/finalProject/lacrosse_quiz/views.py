@@ -1,17 +1,13 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from markdown2 import markdown
 from . import util
 from random import randint
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 from django.db import IntegrityError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from django.core.paginator import Paginator
-from .models import User, Profile
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-from django.contrib.auth.decorators import login_required
+from .models import User
 
 
 def index(request):
@@ -58,11 +54,7 @@ def register(request):
             return render(request, "lacrosse_quiz/register.html", {
                 "message": "Username already taken."
             })
-        login(request, user)
-        profile = Profile()
-        profile.user = user
-        profile.save()
-        return HttpResponseRedirect(reverse("allposts"))
+        return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "lacrosse_quiz/register.html")
 
@@ -78,48 +70,10 @@ def login(request):
         # Check if authentication successful
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse("allposts"))
+            return HttpResponseRedirect(reverse("index"))
         else:
             return render(request, "lacrosse_quiz/login.html", {
                 "message": "Invalid username and/or password."
             })
     else:
         return render(request, "lacrosse_quiz/login.html")
-
-
-def question_view(request, question_id):
-    question = Question.objects.get(id=question_id)
-    choices = question.choices.split(",")
-    if request.method == 'POST':
-        answer = int(request.POST['answer'])
-        user_answer = UserAnswer(
-            user=request.user, question=question, answer=answer)
-        user_answer.save()
-        next_question_id = question_id + 1
-        if next_question_id <= Question.objects.count():
-            return redirect('question', question_id=next_question_id)
-        else:
-            return redirect('answer')
-    context = {
-        'question': question,
-        'choices': choices,
-    }
-    return render(request, 'question.html', context)
-
-
-def answer_view(request):
-    user_answers = UserAnswer.objects.filter(user=request.user)
-    questions = Question.objects.all()
-    results = []
-    for question in questions:
-        user_answer = user_answers.filter(question=question).first()
-        if user_answer is None:
-            results.append(('Unanswered', question))
-        elif user_answer.answer == question.correct_answer:
-            results.append(('Correct', question))
-        else:
-            results.append(('Incorrect', question))
-    context = {
-        'results': results,
-    }
-    return render(request, 'answer.html', context)
