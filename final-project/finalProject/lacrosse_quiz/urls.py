@@ -1,6 +1,6 @@
 from django.urls import path
 # import the views from the lacrosse_quiz app
-from .views import index, article, profile, login,  register
+from .views import index, article, login, register, profile
 
 # URL pattern for the lacrosse_quiz app, not the project.
 urlpatterns = [
