@@ -27,39 +27,48 @@ def article(request, title):
     return render(request, "lacrosse_quiz/articles.html", {'content': content, 'title': title})
 
 
-def profile(request):
+def profile(request, username):
     return render(request, "lacrosse_quiz/profile.html", {
-        "articles": util.list_articles()
+        "username": username
     })
 
 
 def register(request):
     if request.method == "POST":
-        username = request.POST["username"]
-        email = request.POST["email"]
-
-        # Ensure password matches confirmation
-        password = request.POST["password"]
-        confirmation = request.POST["confirmation"]
-        if password != confirmation:
+        if not request.POST["username"] or request.POST["email"] is "":
             return render(request, "lacrosse_quiz/register.html", {
-                "message": "Passwords must match."
+                "message": "Please complete all fields."
             })
+        else:
+            username = request.POST["username"]
+            email = request.POST["email"]
 
-        # Attempt to create new user
-        try:
-            user = User.objects.create_user(username, email, password)
-            user.save()
-        except IntegrityError:
-            return render(request, "lacrosse_quiz/register.html", {
-                "message": "Username already taken."
-            })
-        return HttpResponseRedirect(reverse("index"))
+            # Ensure password matches confirmation
+            password = request.POST["password"]
+            confirmation = request.POST["confirmation"]
+            if password != confirmation:
+                return render(request, "lacrosse_quiz/register.html", {
+                    "message": "Passwords must match."
+                })
+
+            # Attempt to create new user
+            try:
+                user = User.objects.create_user(username, email, password)
+                user.save()
+            except IntegrityError:
+                return render(request, "lacrosse_quiz/register.html", {
+                    "message": "Username already taken."
+                })
+            return HttpResponseRedirect(reverse("lacrosse_quiz/index.html", {
+                "message": ""
+            }))
     else:
-        return render(request, "lacrosse_quiz/register.html")
+        return render(request, "lacrosse_quiz/register.html", {
+            "message": ""
+        })
 
 
-def login(request):
+def login_view(request):
     if request.method == "POST":
 
         # Attempt to sign user in
